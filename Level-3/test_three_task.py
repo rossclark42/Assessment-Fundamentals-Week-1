@@ -5,6 +5,7 @@
 from task_three import generate_invoice
 import pytest
 
+
 def test_gen_invoice():
     assert generate_invoice("""Bread x 2 - £3.60
 Milk x 1 - £0.80
@@ -50,7 +51,6 @@ Bread x 2 - £2.88
 Total: £2.88
 VAT: £0.72
 Total inc VAT: £3.60"""
-
     assert generate_invoice(receipt) == invoice
 
 
@@ -62,7 +62,7 @@ def test_gen_invoice_empty():
 Total: £0.00
 VAT: £0.00
 Total inc VAT: £0.00"""
-
+    print(generate_invoice(receipt))
     assert generate_invoice(receipt) == invoice
 
 

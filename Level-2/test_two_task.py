@@ -3,6 +3,7 @@
 from task_two import generate_receipt, add_to_basket, basket
 import pytest
 
+
 def reset_basket():
     basket.clear()
 

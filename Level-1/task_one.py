@@ -13,7 +13,15 @@ def add_to_basket(item: dict) -> list:
 
 
 def generate_receipt(basket: list) -> str:
-    return  # return the receipt string
+    receipt = ""
+    if len(basket) == 0:
+        receipt = "Basket is empty"
+        return receipt
+    else:
+        for item in basket:
+            receipt += f"{item["name"]} - {'Free' if item["price"] == 0 else f'£{item["price"]:.2f}'}\n"
+    receipt += f"Total: £{sum(item["price"] for item in basket):.2f}"
+    return receipt  # return the receipt string
 
 
 if __name__ == "__main__":
